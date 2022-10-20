@@ -24,15 +24,15 @@ int main()
 		y = ((x + 2) * (-R1)) / (2 - R1);
 	else
 		if (-R1 < x && x <= 0)
-			y = -R1 + sqrt(R1 * R1 - x * x);
+			y = -R1 + sqrt(pow(R1, 2) - pow(x, 2));
 		else
-			if (0 < x && x <= 2 * R2)
-				y = R2 - sqrt(R2 * R2 - x * x);
+			if (0 < x && x <= R2)
+				y = R2 - sqrt(pow(R2, 2) - pow(x, 2));
 			else
-				if (R2 <= x <= 4)
+				if (R2 <= x && x <= 4)
 					y = -R1;
 				else
-					y = (R1 * (x - 6)) / 2.0;
+					y = -R1 + (R1 *(x - 4))/ 2.0;
 
 	cout << endl;
 	cout << "y = " << y << endl;
